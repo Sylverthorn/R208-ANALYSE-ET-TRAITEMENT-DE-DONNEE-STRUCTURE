@@ -1,0 +1,31 @@
+import sys
+
+
+def divise1(a:float, b:float)->float:
+    c = a/b
+    return c
+
+def main():
+    
+    try:
+        a = float(input("saisir a : "))
+        b = float(input("saisir b : "))
+        
+        c = divise1(a, b)
+        print(f"-- La division de {a} par {b} donne {c} --")
+    except ZeroDivisionError as e:
+        divise2(a,b,e)
+    except ValueError:
+        divise3()
+
+def divise2(a:float, b:float, e)->float:
+    print(f"! ERREUR : division par 0 {e} !")
+    main()
+
+def divise3():
+    print("mauvaise valeurs pour a ou b (il faut un réel)")
+    main()
+        
+if __name__ == "__main__":
+    sys.exit(main())
+    

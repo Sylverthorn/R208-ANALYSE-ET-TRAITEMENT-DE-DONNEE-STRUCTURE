@@ -1,0 +1,28 @@
+Exercice 2 : lecture et écriture d’un fichier texte
+Avec Python, les fonctions à utiliser pour manipuler les fichiers sont : open, read, write,
+close.
+✓ Pour ouvrir un fichier, la syntaxe est : fichier = open(nom_du_fichier, mode),
+les modes sont :
+● r, pour une ouverture en lecture (READ).
+● w, pour une ouverture en écriture (WRITE), à chaque ouverture le contenu du fichier
+est écrasé. Si le fichier n'existe pas, Python le crée.
+● a, pour une ouverture en mode ajout à la fin du fichier (APPEND). Si le fichier
+n'existe pas, Python le crée.
+● b, pour une ouverture en mode binaire.
+● t, pour une ouverture en mode texte.
+● x, crée un nouveau fichier et l'ouvre pour écriture
+✓ Pour fermer un fichier : fichier.close(). C’est une opération nécessaire, vous pouvez
+perdre des données (mécanisme de cache) si vous ne faites pas l’opération correctement (vous
+pouvez l’assimiler à arracher une clé USB)
+✓ Pour lire le fichier dans sa totalité : fichier.read()
+✓ Pour lire le fichier ligne par ligne : fichier.readline() ou si vous voulez lire le fichier
+ligne par ligne totalement, une boucle permettra de faire l’opération comme dans le code
+suivant :
+for ligne in fichier:
+ ligne = ligne.rstrip("\r\n") # A quoi sert rstrip ???
+ print(ligne)
+✓ Pour écrire dans un fichier (voir le mode nécessaire) : fichier.write(”coucou\n").
+Travail à faire :
+1. Créer un fichier texte avec du contenu que vous pourrez trouver (par exemple :
+https://fr.wikipedia.org/wiki/Python_(langage)) et lisez le fichier en affichant ligne par ligne le
+contenu.
